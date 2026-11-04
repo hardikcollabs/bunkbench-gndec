@@ -92,7 +92,18 @@ function renderTimetable(section = "MEA") {
     meta.innerHTML = `<span class="eyebrow">${timetableMeta.title}</span><p><strong>${timetableMeta.period}</strong> · Generated ${timetableMeta.generated}</p><p>${timetableMeta.note}</p><a class="text-link" href="${timetableMeta.sourceUrl}" target="_blank" rel="noreferrer">${timetableMeta.sourceLabel} ↗</a>`;
   }
   const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
-  target.innerHTML = `<section class="timetable-panel"><div class="section-heading"><div><span class="eyebrow">Selected section</span><h2>${selected.label}</h2></div></div><div class="timetable-scroll"><table class="timetable"><thead><tr><th>Time</th>${timetableDays.map(day => `<th class="${day === today ? "today" : ""}">${day}${day === today ? " · today" : ""}</th>`).join("")}</tr></thead><tbody>${selected.rows.map((row, rowIndex) => `<tr><th>${timetableSlots[rowIndex]}</th>${row.map((cell, dayIndex) => `<td class="${timetableDays[dayIndex] === today ? "today" : ""}">${cell.length ? cell.map(line => `<div>${line}</div>`).join("") : "—"}</td>`).join("")}</tr>`).join("")}</tbody></table></div></section>`;
+  target.innerHTML = `<section class="timetable-panel"><div class="section-heading"><div><span class="eyebrow">Selected section</span><h2>${selected.label}</h2></div></div><div class="timetable-scroll"><table class="timetable"><thead><tr><th>Time</th>${timetableDays.map(day => `<th class="${day === today ? "today" : ""}">${day}${day === today ? " · today" : ""}</th>`).join("")}</tr></thead><tbody>${selected.rows.map((row, rowIndex) => `<tr><th>${timetableSlots[rowIndex]}</th>${row.map((cell, dayIndex) => `<td class="${timetableDays[dayIndex] === today ? "today" : ""}">${timetableCell(cell, section)}</td>`).join("")}</tr>`).join("")}</tbody></table></div></section>`;
+}
+
+function timetableCell(lines, section) {
+  if (!lines.length) return "—";
+  const text = lines.join(" ");
+  const pattern = section === "MEA" ? /D2 ME A([123])/g : /D2 ME B([123])/g;
+  const linePattern = section === "MEA" ? /D2 ME A[123]/ : /D2 ME B[123]/;
+  const groups = [...text.matchAll(pattern)].map(match => `${section}${match[1]}`);
+  const uniqueGroups = [...new Set(groups)];
+  const content = lines.filter(line => !linePattern.test(line)).map(line => `<div>${line}</div>`).join("");
+  return `<div class="timetable-scope ${uniqueGroups.length ? "subgroup-scope" : "all-scope"}">${uniqueGroups.length ? `Sub-section: ${uniqueGroups.join(" · ")}` : "All sub-sections"}</div>${content}`;
 }
 
 function initTimetable() {
