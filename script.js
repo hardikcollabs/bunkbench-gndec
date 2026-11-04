@@ -134,7 +134,7 @@ function holidayCard(item) {
 
 function renderHolidays() {
   if (!$("#regular-holidays") || typeof holidays === "undefined") return;
-  $("#holiday-meta").innerHTML = `<span class="eyebrow">${holidayMeta.title}</span><p>${holidayMeta.note}</p><p class="meta">Source document date: ${holidayMeta.sourceDate} · <a class="text-link" href="${holidayMeta.sourceFile}" target="_blank">Open original PDF ↗</a></p>`;
+  $("#holiday-meta").innerHTML = `<span class="eyebrow">${holidayMeta.title}</span><p>${holidayMeta.note}</p><p class="meta">${holidays.length} regular holidays · ${restrictedHolidays.length} restricted holidays · ${halfDayHolidays.length} half-working-day observances · Source document date: ${holidayMeta.sourceDate}</p>`;
   $("#regular-holidays").innerHTML = holidays.map(holidayCard).join("");
   $("#restricted-holidays").innerHTML = restrictedHolidays.map(holidayCard).join("");
   $("#halfday-holidays").innerHTML = halfDayHolidays.map(holidayCard).join("");
