@@ -120,7 +120,19 @@ function initTimetable() {
   renderTimetable();
 }
 
+function holidayCard(item) {
+  return `<article class="holiday-card"><span class="eyebrow">${item[2]}</span><h3>${item[0]}</h3><p>${item[1]}</p></article>`;
+}
+
+function renderHolidays() {
+  if (!$("#regular-holidays") || typeof holidays === "undefined") return;
+  $("#holiday-meta").innerHTML = `<span class="eyebrow">${holidayMeta.title}</span><p>${holidayMeta.note}</p><p class="meta">Source document date: ${holidayMeta.sourceDate} · <a class="text-link" href="${holidayMeta.sourceFile}" target="_blank">Open original PDF ↗</a></p>`;
+  $("#regular-holidays").innerHTML = holidays.map(holidayCard).join("");
+  $("#restricted-holidays").innerHTML = restrictedHolidays.map(holidayCard).join("");
+  $("#halfday-holidays").innerHTML = halfDayHolidays.map(holidayCard).join("");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  initNav(); initFilters(); renderUpdates(); renderMemes(); renderSubject(); initTimetable();
+  initNav(); initFilters(); renderUpdates(); renderMemes(); renderSubject(); initTimetable(); renderHolidays();
   $("#panic-button")?.addEventListener("click", () => $("#panic-checklist")?.classList.toggle("show"));
 });
