@@ -83,7 +83,33 @@ function initNav() {
   document.querySelectorAll("[data-issue-link]").forEach(link => link.href = issueUrl);
 }
 
+function renderTimetable(section = "MEA") {
+  const target = $("#timetable-view");
+  const meta = $("#timetable-meta");
+  if (!target || typeof timetable === "undefined") return;
+  const selected = timetable[section];
+  if (meta) {
+    meta.innerHTML = `<span class="eyebrow">${timetableMeta.title}</span><p><strong>${timetableMeta.period}</strong> · Generated ${timetableMeta.generated}</p><p>${timetableMeta.note}</p><a class="text-link" href="${timetableMeta.sourceUrl}" target="_blank" rel="noreferrer">${timetableMeta.sourceLabel} ↗</a>`;
+  }
+  const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
+  target.innerHTML = `<section class="timetable-panel"><div class="section-heading"><div><span class="eyebrow">Selected section</span><h2>${selected.label}</h2></div></div><div class="timetable-scroll"><table class="timetable"><thead><tr><th>Time</th>${timetableDays.map(day => `<th class="${day === today ? "today" : ""}">${day}${day === today ? " · today" : ""}</th>`).join("")}</tr></thead><tbody>${selected.rows.map((row, rowIndex) => `<tr><th>${timetableSlots[rowIndex]}</th>${row.map((cell, dayIndex) => `<td class="${timetableDays[dayIndex] === today ? "today" : ""}">${cell.length ? cell.map(line => `<div>${line}</div>`).join("") : "—"}</td>`).join("")}</tr>`).join("")}</tbody></table></div></section>`;
+}
+
+function initTimetable() {
+  if (!$("#timetable-view")) return;
+  document.querySelectorAll(".timetable-tab").forEach(button => button.addEventListener("click", () => {
+    document.querySelectorAll(".timetable-tab").forEach(tab => {
+      const active = tab === button;
+      tab.classList.toggle("active", active);
+      tab.classList.toggle("button-ghost", !active);
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+    });
+    renderTimetable(button.dataset.section);
+  }));
+  renderTimetable();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  initNav(); initFilters(); renderUpdates(); renderMemes(); renderSubject();
+  initNav(); initFilters(); renderUpdates(); renderMemes(); renderSubject(); initTimetable();
   $("#panic-button")?.addEventListener("click", () => $("#panic-checklist")?.classList.toggle("show"));
 });

@@ -9,12 +9,17 @@
 <body>
   <header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html">Bunk<span>Bench</span> <small>GNDEC</small></a><button class="menu-toggle" id="menu-toggle">☰</button><nav class="site-nav" id="site-nav"><a href="index.html">Home</a><a href="index.html#semester">Semester 3</a><a href="resources.html">Resource Vault</a><a href="timetable.html">Time Table</a><a href="updates.html">Student Updates</a><a href="memes.html">Meme Pit</a><a href="about.html">About</a></nav><button class="icon-button" id="theme-toggle">☼</button></div></header>
   <main class="container page-head">
-    <span class="eyebrow">The timetable, but actually verified</span>
+    <span class="eyebrow">M&amp;PE Department · July to December 2026</span>
     <h1>Your week,<br>un-chaosed.</h1>
-    <p class="lede">The MEA/MEB timetable will appear here once the original timetable document is uploaded and checked.</p>
-    <section class="panel"><span class="eyebrow">Waiting on the source file</span><h2>No guessed timings on this bench.</h2><p>Upload the original class timetable or a clear official PDF/image. Then this page will be rebuilt into a responsive weekly view with section tabs, current-day highlighting, class types, and only the room or faculty details shown in the source.</p><p class="meta">Last updated: awaiting verified timetable upload</p></section>
-    <section class="panel"><span class="eyebrow">Verification rule</span><h2>Check the official notice first.</h2><p>Timetables can change. Until the source is uploaded, verify current classes through the official GNDEC department channel.</p><a class="text-link" href="https://me.gndec.ac.in/" target="_blank" rel="noreferrer">Open official M&amp;PE source ↗</a></section>
+    <p class="lede">Choose your D2 section. Source abbreviations are kept intact so the timetable says what the official schedule says.</p>
+    <div id="timetable-meta" class="panel timetable-meta"></div>
+    <div class="timetable-tabs" role="tablist" aria-label="Choose timetable section">
+      <button class="button timetable-tab active" data-section="MEA" role="tab" aria-selected="true">D2MEA</button>
+      <button class="button button-ghost timetable-tab" data-section="MEB" role="tab" aria-selected="false">D2MEB</button>
+    </div>
+    <div id="timetable-view"></div>
   </main>
-  <footer class="footer"><div class="container footer-inner"><div><strong>BunkBench GNDEC</strong><br>Unofficial, useful, slightly chaotic.</div><div>Unofficial student-made resource hub. Verify official notices through GNDEC channels.</div></div></footer><script src="script.js"></script>
+  <footer class="footer"><div class="container footer-inner"><div><strong>BunkBench GNDEC</strong><br>Unofficial, useful, slightly chaotic.</div><div>Unofficial student-made resource hub. Verify official notices through GNDEC channels.</div></div></footer>
+  <script src="data/timetable.js"></script><script src="script.js"></script>
 </body>
 </html>
