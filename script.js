@@ -102,8 +102,16 @@ function timetableCell(lines, section) {
   const linePattern = section === "MEA" ? /D2 ME A[123]/ : /D2 ME B[123]/;
   const groups = [...text.matchAll(pattern)].map(match => `${section}${match[1]}`);
   const uniqueGroups = [...new Set(groups)];
-  const content = lines.filter(line => !linePattern.test(line)).map(line => `<div>${line}</div>`).join("");
-  return `<div class="timetable-scope ${uniqueGroups.length ? "subgroup-scope" : "all-scope"}">${uniqueGroups.length ? `Sub-section: ${uniqueGroups.join(" · ")}` : "All sub-sections"}</div>${content}`;
+  const contentLines = lines.filter(line => !linePattern.test(line));
+  const content = uniqueGroups.length
+    ? contentLines.map(line => {
+        const columns = line.split(/\s{2,}/).filter(Boolean);
+        return `<div class="timetable-row">${columns.map(column => `<span>${column}</span>`).join("")}</div>`;
+      }).join("")
+    : contentLines.map(line => `<div>${line}</div>`).join("");
+  return uniqueGroups.length
+    ? `<div class="timetable-scope subgroup-scope"><span>Sub-section:</span><div class="subgroup-head subgroup-count-${uniqueGroups.length}">${uniqueGroups.map(group => `<span>${group}</span>`).join("")}</div></div><div class="subgroup-content subgroup-count-${uniqueGroups.length}">${content}</div>`
+    : `<div class="timetable-scope all-scope">All sub-sections</div>${content}`;
 }
 
 function initTimetable() {
