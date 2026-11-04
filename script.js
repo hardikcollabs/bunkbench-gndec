@@ -2,6 +2,29 @@
 const issueUrl = "https://github.com/hardikcollabs/bunkbench-gndec/issues";
 const $ = (selector, root = document) => root.querySelector(selector);
 const params = new URLSearchParams(location.search);
+const pagePunchlines = {
+  "index.html": "Attendance says 75%. Soul says present.",
+  "resources.html": "One more PDF and suddenly the semester looks manageable.",
+  "timetable.html": "The timetable is readable. The attendance situation is still under investigation.",
+  "holidays.html": "Academic calendar said: take a break, bestie.",
+  "results.html": "Open the portal. Breathe first. Refresh only with purpose.",
+  "about.html": "Built by one student, powered by unreasonable PDF-hunting energy.",
+  "updates.html": "Breaking news: someone finally found the official link.",
+  "memes.html": "Laugh responsibly. The syllabus is still watching.",
+  "subject.html": "One unit at a time. The boss fight is not going anywhere.",
+  "admin-guide.html": "No fake admin panel. Just GitHub, files, and responsible chaos."
+};
+
+function renderPunchline() {
+  const key = location.pathname.split("/").pop() || "index.html";
+  const punchline = pagePunchlines[key] || "Student life: now with slightly better navigation.";
+  const footer = $(".footer");
+  if (!footer || $(".page-punchline")) return;
+  const note = document.createElement("p");
+  note.className = "page-punchline";
+  note.textContent = punchline;
+  footer.parentNode.insertBefore(note, footer);
+}
 
 function resourceLink(item) {
   return item.officialSourceLink || item.fileLink || "#";
@@ -141,6 +164,6 @@ function renderHolidays() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  initNav(); initFilters(); renderUpdates(); renderMemes(); renderSubject(); initTimetable(); renderHolidays();
+  initNav(); initFilters(); renderUpdates(); renderMemes(); renderSubject(); initTimetable(); renderHolidays(); renderPunchline();
   $("#panic-button")?.addEventListener("click", () => $("#panic-checklist")?.classList.toggle("show"));
 });
