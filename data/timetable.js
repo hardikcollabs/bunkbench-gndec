@@ -4,7 +4,7 @@ const timetableMeta = {
   sourceLabel: "Official M&PE timetable source",
   period: "July to December 2026",
   generated: "9/7/26 2:09 PM",
-  note: "Source terminology and abbreviations are preserved. Verify changes against the official source."
+  note: "Source terminology and abbreviations are preserved. L = Lecture, T = Tutorial, P = Practical. Teacher codes are kept as shown; verify unclear codes against the official source."
 };
 
 const timetableSlots = [
