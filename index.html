@@ -1,9 +1,118 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BunkBench GNDEC — Student survival kit</title><link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html">Bunk<span>Bench</span> <small>GNDEC</small></a><button class="menu-toggle" id="menu-toggle">☰</button><nav class="site-nav" id="site-nav"><a href="index.html">Home</a><a href="index.html#semester">Semester 3</a><a href="resources.html">Resource Vault</a><a href="timetable.html">Time Table</a><a href="updates.html">Student Updates</a><a href="memes.html">Meme Pit</a><a href="about.html">About</a></nav><div class="nav-actions"><button class="icon-button" id="theme-toggle" aria-label="Toggle light mode">☼</button></div></div></header>
-<main><section class="hero"><div class="container"><span class="eyebrow">Unofficial · student-made · mech-coded</span><h1>BunkBench <em>GNDEC.</em></h1><p class="lede">GNDEC’s notes, chaos, and semester survival kit. For the people who open the syllabus two days before the exam.</p><a class="button" href="#semester">Explore Semester 3 ↗</a><a class="button button-ghost" href="resources.html">Find notes</a><a class="button button-ghost" href="memes.html">Enter Meme Pit</a><div class="meter"><span class="eyebrow">Semester survival meter</span><strong>12% prepared, 88% spiritually present.</strong><div class="meter-bar"><span></span></div></div></div></section>
-<section><div class="container"><div class="section-heading"><div><span class="eyebrow">Pick your weapon</span><h2>Quick access.</h2></div></div><div class="quick-grid"><a class="quick-card" href="resources.html"><span class="card-mark">▦</span><h3>Notes Vault</h3><p>Notes mil gayi. Panic cancelled.</p></a><a class="quick-card" href="resources.html?type=Syllabus"><span class="card-mark">⌁</span><h3>Syllabus Decoder</h3><p>Find the units before they find you.</p></a><a class="quick-card" href="resources.html?type=PYQ"><span class="card-mark">✦</span><h3>PYQ Graveyard</h3><p>Past questions. Present confidence.</p></a><a class="quick-card" href="resources.html?type=Lab%20Manual"><span class="card-mark">⚙</span><h3>Lab Survival</h3><p>Powered by chai and last-minute files.</p></a><a class="quick-card" href="timetable.html"><span class="card-mark">◫</span><h3>Time Table, But Readable</h3><p>Midsem is coming. We ride at dawn.</p></a><a class="quick-card" href="results.html"><span class="card-mark">▣</span><h3>Results Relay</h3><p>Check your fate at the official portal.</p></a><a class="quick-card" href="holidays.html"><span class="card-mark">☼</span><h3>Holiday Roll Call</h3><p>Find the sanctioned escape routes.</p></a><a class="quick-card" href="memes.html"><span class="card-mark">☻</span><h3>Meme Pit</h3><p>Laugh at the semester, never a person.</p></a><a class="quick-card" href="about.html#links"><span class="card-mark">↗</span><h3>Useful Links</h3><p>Good links, zero scavenger hunt.</p></a></div></div></section>
-<section id="semester"><div class="container"><div class="section-heading"><div><span class="eyebrow">Current focus</span><h2>Semester 3 spotlight.</h2></div><a class="text-link" href="resources.html">Open full vault ↗</a></div><div class="subject-grid"><article class="subject-card"><span class="subject-icon">⟐</span><h3>Strength of Materials</h3><p>Stress, strain, and emotional damage.</p><a class="text-link" href="subject.html?subject=strength-of-materials">Open subject ↗</a></article><article class="subject-card"><span class="subject-icon">◉</span><h3>Applied Thermodynamics-I</h3><p>Heat goes in. Understanding comes later.</p><a class="text-link" href="subject.html?subject=applied-thermodynamics-i">Open subject ↗</a></article><article class="subject-card"><span class="subject-icon">⚙</span><h3>Manufacturing Practices</h3><p>Making things, including last-minute files.</p><a class="text-link" href="subject.html?subject=manufacturing-practices">Open subject ↗</a></article><article class="subject-card"><span class="subject-icon">✦</span><h3>Engineering Materials and Metallurgy</h3><p>Materials, structure, transformations, and heat treatment.</p><a class="text-link" href="subject.html?subject=engineering-materials-and-metallurgy">Open subject ↗</a></article></div></div></section>
-<section class="panic"><div class="container"><span class="eyebrow">Emergency protocol</span><h2>Exam Panic Button.</h2><p>For when the internal monologue starts buffering.</p><button class="button button-dark" id="panic-button">Activate checklist</button><div class="panic-checklist" id="panic-checklist"><div class="check">☐ Find syllabus</div><div class="check">☐ Check important units</div><div class="check">☐ Open PYQs</div><div class="check">☐ Download notes</div><div class="check">☐ Make chai</div><div class="check">☐ Pretend you planned this</div></div></div></section>
-<section><div class="container"><div class="section-heading"><div><span class="eyebrow">Fresh from the bench</span><h2>Latest stuff.</h2></div><a class="text-link" href="updates.html">All updates ↗</a></div><div class="updates-grid" id="updates-list"></div></div></section>
-<section><div class="container"><div class="section-heading"><div><span class="eyebrow">Positive academic chaos</span><h2>Meme Pit preview.</h2></div><a class="text-link" href="memes.html">Enter the pit ↗</a></div><div class="meme-grid" id="meme-grid"></div></div></section></main>
-<footer class="footer"><div class="container footer-inner"><div><strong>BunkBench GNDEC</strong><br>GNDEC’s notes, chaos, and semester survival kit.</div><div>Unofficial student-made resource hub for GNDEC students. Not affiliated with or endorsed by GNDEC.<br><a data-issue-link href="#">Report an issue / suggest a resource ↗</a></div></div></footer><script src="data/resources.js"></script><script src="data/updates.js"></script><script src="data/memes.js"></script><script src="data/subjects.js"></script><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="BunkBench GNDEC is a student-first resource hub for notes, timetables, results, updates, and semester survival.">
+  <title>BunkBench GNDEC — Your student command centre</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="BunkBench GNDEC home">Bunk<span>Bench</span> <small>GNDEC</small></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false">☰</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="#semester">Semester 3</a>
+        <a href="resources.html">Resource Vault</a>
+        <a href="timetable.html">Time Table</a>
+        <a href="updates.html">Updates</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="portal-link" href="https://academics.gndec.ac.in/" target="_blank" rel="noreferrer">Academic portal ↗</a>
+        <button class="icon-button" id="theme-toggle" aria-label="Toggle light mode">☼</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="home-hero">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <div class="status-pill"><span></span> Student-first · always in beta</div>
+          <h1>College life,<br><em>less scattered.</em></h1>
+          <p class="lede">The GNDEC student command centre for finding the right PDF, checking the timetable, catching an update, and getting back to your actual life.</p>
+          <div class="hero-actions">
+            <a class="button" href="#semester">Open your semester ↗</a>
+            <a class="button button-ghost" href="resources.html">Browse the vault</a>
+          </div>
+          <div class="hero-note"><span class="eyebrow">Built for the 47-message problem</span><strong>One useful link at a time.</strong></div>
+        </div>
+        <div class="hero-board" aria-label="Student dashboard preview">
+          <div class="board-top"><span>MON · 05 NOV</span><span class="board-dot">● live-ish</span></div>
+          <div class="board-title">Your week,<br><strong>decoded.</strong></div>
+          <div class="board-row"><span class="board-icon orange">↗</span><div><small>UP NEXT</small><strong>Open the resource vault</strong></div><span class="board-arrow">→</span></div>
+          <div class="board-row"><span class="board-icon lime">◫</span><div><small>DON'T MISS</small><strong>Check your section timetable</strong></div><span class="board-arrow">→</span></div>
+          <div class="board-row"><span class="board-icon blue">✦</span><div><small>GOOD TO KNOW</small><strong>Official links stay official</strong></div><span class="board-arrow">→</span></div>
+          <div class="board-footer">No login. No scavenger hunt. Just student stuff.</div>
+        </div>
+      </div>
+      <div class="hero-orbit orbit-one">✦</div><div class="hero-orbit orbit-two">⌁</div>
+    </section>
+
+    <section class="command-section">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">Start here</span><h2>Your useful shortcuts.</h2></div>
+          <span class="section-count">09 tools / 0 drama</span>
+        </div>
+        <div class="command-grid">
+          <a class="command-card command-feature" href="resources.html">
+            <span class="card-number">01</span><span class="card-symbol">▦</span><h3>Resource Vault</h3><p>Notes, syllabus, PYQs, lab manuals, and the files everyone keeps asking for.</p><span class="card-link">Find a file ↗</span>
+          </a>
+          <a class="command-card command-orange" href="timetable.html">
+            <span class="card-number">02</span><span class="card-symbol">◫</span><h3>Time Table</h3><p>Readable ME A and ME B schedules, with the official source one click away.</p><span class="card-link">See the week ↗</span>
+          </a>
+          <a class="command-card command-lime" href="results.html">
+            <span class="card-number">03</span><span class="card-symbol">▣</span><h3>Results Relay</h3><p>Go straight to the official academics portal when it is result-refresh time.</p><span class="card-link">Check results ↗</span>
+          </a>
+          <a class="command-card" href="updates.html">
+            <span class="card-number">04</span><span class="card-symbol">↗</span><h3>Student Updates</h3><p>Fresh resources, notices, and links worth opening today.</p><span class="card-link">Catch up ↗</span>
+          </a>
+          <a class="command-card" href="holidays.html">
+            <span class="card-number">05</span><span class="card-symbol">☼</span><h3>Holiday Roll Call</h3><p>Plan the escape route with regular, restricted, and half-day holidays.</p><span class="card-link">Find a break ↗</span>
+          </a>
+          <a class="command-card command-blue" href="memes.html">
+            <span class="card-number">06</span><span class="card-symbol">☻</span><h3>Meme Pit</h3><p>Positive academic chaos for when the syllabus needs a softer landing.</p><span class="card-link">Take five ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="semester-section" id="semester">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">Current focus · Mechanical Engineering</span><h2>Semester 3, sorted.</h2></div>
+          <a class="text-link" href="resources.html">Open full vault ↗</a>
+        </div>
+        <div class="semester-intro"><p>Four subjects. One calmer place to begin. Pick a subject to see its units and related resources.</p><span class="semester-sticker">ME / SEM 03<br><strong>LET'S GO</strong></span></div>
+        <div class="subject-grid">
+          <a class="subject-card" href="subject.html?subject=strength-of-materials"><span class="subject-icon">⟐</span><span class="subject-code">ME-301</span><h3>Strength of Materials</h3><p>Stress, strain, and emotional damage.</p><span class="text-link">Open subject ↗</span></a>
+          <a class="subject-card" href="subject.html?subject=applied-thermodynamics-i"><span class="subject-icon">◉</span><span class="subject-code">ME-302</span><h3>Applied Thermodynamics-I</h3><p>Heat goes in. Understanding comes later.</p><span class="text-link">Open subject ↗</span></a>
+          <a class="subject-card" href="subject.html?subject=manufacturing-practices"><span class="subject-icon">⚙</span><span class="subject-code">ME-303</span><h3>Manufacturing Practices</h3><p>Making things, including last-minute files.</p><span class="text-link">Open subject ↗</span></a>
+          <a class="subject-card" href="subject.html?subject=engineering-materials-and-metallurgy"><span class="subject-icon">✦</span><span class="subject-code">ME-304</span><h3>Engineering Materials and Metallurgy</h3><p>Structure, transformations, and heat treatment.</p><span class="text-link">Open subject ↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="official-strip">
+      <div class="container official-inner">
+        <div><span class="eyebrow">Need the official answer?</span><h2>Keep your source of truth close.</h2><p>BunkBench helps you find your way around. Notices, results, and college updates belong to GNDEC's official channels.</p></div>
+        <div class="official-actions"><a class="button button-dark" href="https://gndec.ac.in/" target="_blank" rel="noreferrer">GNDEC website ↗</a><a class="button button-dark button-outline-dark" href="https://academics.gndec.ac.in/" target="_blank" rel="noreferrer">Academic portal ↗</a></div>
+      </div>
+    </section>
+
+    <section class="home-updates">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">Fresh from the bench</span><h2>What changed lately.</h2></div><a class="text-link" href="updates.html">All updates ↗</a></div>
+        <div class="updates-grid" id="updates-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><div><strong>BunkBench GNDEC</strong><br>Your unofficial student command centre.</div><div>Student-made resource hub for GNDEC students. Not affiliated with or endorsed by GNDEC.<br><a data-issue-link href="#">Report an issue / suggest a resource ↗</a></div></div></footer>
+  <script src="data/updates.js"></script><script src="script.js"></script>
+</body>
+</html>
