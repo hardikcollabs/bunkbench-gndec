@@ -97,7 +97,17 @@ function initFilters() {
 }
 
 function initNav() {
-  $("#menu-toggle")?.addEventListener("click", () => $("#site-nav").classList.toggle("open"));
+  $("#menu-toggle")?.addEventListener("click", () => {
+    const menu = $("#site-nav");
+    const button = $("#menu-toggle");
+    const open = menu.classList.toggle("open");
+    button.setAttribute("aria-expanded", String(open));
+    button.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  });
+  document.querySelectorAll("#site-nav a").forEach(link => link.addEventListener("click", () => {
+    $("#site-nav")?.classList.remove("open");
+    $("#menu-toggle")?.setAttribute("aria-expanded", "false");
+  }));
   $("#theme-toggle")?.addEventListener("click", () => {
     document.body.classList.toggle("light");
     localStorage.setItem("bunkbench-theme", document.body.classList.contains("light") ? "light" : "dark");
