@@ -26,9 +26,9 @@ It starts with GNDEC Mechanical Engineering, Semester 3. The long-term idea is s
 
 ## Built by
 
-Built and maintained independently by **Hardik Kumar**.
+Built and maintained independently by a GNDEC student.
 
-Hardik is the student creator behind BunkBench GNDEC - a small, independent attempt to make Mechanical Engineering resources easier to find and less stressful to use.
+BunkBench GNDEC is a small, independent attempt to make Mechanical Engineering resources easier to find and less stressful to use.
 
 ## Important
 
